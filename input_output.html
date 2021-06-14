@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="test">Result : <span id="result"></span></h1>
+
+    <input type="number" id="input" onkeyup="aa()">
+    <button id="btn" >Calculate</button>
+
+    <a href="me.html">to me</a>
+
+
+    <ul>
+        <li class="one">apple</li>
+        <li class="one">orange</li>
+        <li class="one">mango</li>
+        <li class="one">banana</li>
+    </ul>
+
+
+    <script>
+
+        //BOM
+        // let name = prompt("မင်းနာမည်လေးပြောပေးပါ")
+        // alert(name);
+        // console.log(name)
+        // document.write(name)
+
+        // let input = prompt("dollar ထည့်ပါ")
+        // document.write(calcDollarToMmk(input));
+
+
+        let input = document.getElementById("input");
+        let result = document.getElementById("result");
+
+        
+        
+
+        //logic
+        function calcDollarToMmk(amount){
+            let dollarRate = 1650;
+            return amount*dollarRate;
+        }
+
+
+        function aa(){
+            console.log("U press")
+        }
+
+
+        // document.getElementById("btn").onclick = function(){
+        //     result.innerHTML = calcDollarToMmk(Number(input.value))
+        //     input.value = ""
+        // }
+
+        document.getElementById("btn").addEventListener("click",function(){
+            result.innerHTML = calcDollarToMmk(Number(input.value))
+            input.value = ""
+        })
+
+    </script>
+    
+</body>
+</html>

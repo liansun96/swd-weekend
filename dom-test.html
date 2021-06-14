@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 2</title>
+    <style lang="">
+        *{
+            box-sizing: border-box;
+        }
+        h1{
+            border:2px solid black;
+            padding: 20px;
+            width: 255px;
+        }
+        div{
+            margin-bottom: 20px;
+            
+        }
+        input{
+            width: 150px;
+            margin-right: 5px;
+            height: 30px;
+            display: inline-block;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="result">Text</h1>
+    <div>
+        <input type="text" id="text" >
+        <button id="setText" onclick="changeText()">Set Text</button>
+    </div>
+    <div>
+        <input type="color" id="color" >
+        <button id="setColor">Set Color</button>
+    </div>
+    <div>
+        <input type="number" id="fontSize">
+        <button id="setSize" >Set FontSize</button>
+    </div>
+
+    <select name="" id="myselect">
+        <option value="one">one</option>
+        <option value="two">two</option>
+        <option value="three">three</option>
+        <option value="four">four</option>
+    </select>
+
+    <script>
+
+        let result = document.getElementById("result");
+        let textInput = document.getElementById("text");
+
+
+        function changeText(){
+        
+            result.innerHTML = textInput.value;
+            textInput.value = "";
+        }
+
+        document.getElementById("setColor").addEventListener("click",function(){
+            result.style.color = document.querySelector("#color").value;
+        });
+
+        document.querySelector("#color").addEventListener("change",function(){
+            result.style.color = this.value;
+        })
+
+        let fontSize = document.getElementById("fontSize");
+        fontSize.onkeyup = function(){
+            console.log("U type")
+            result.style.fontSize = fontSize.value+"px";
+        };
+
+        document.getElementById("myselect").addEventListener("change",function(){ result.innerHTML = this.value });
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+    </script>
+    
+</body>
+</html>
