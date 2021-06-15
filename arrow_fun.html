@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let aa = function(){ 
+            return "this is aa";
+        }
+
+        let bb = function(x,y){
+            return "fun bb with "+x+" and "+y+".";
+        }
+
+        let cc = function(x,y){
+            let z = x+y;
+            return "fun cc with "+z;
+        }
+
+        
+
+        //arrow function
+
+        // let arrowAA = () => "this is arrowAA";
+        let arrowAA = _ => "this is arrowAA";
+
+        let arrowBB = (x,y) => "fun bb with "+x+" and "+y+".";
+
+        let arrowCC = (x,y) => {
+            let z = x+y;
+            return "fun cc with "+z;
+        }
+
+        // arrrow fun with this keyword
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName : () => "my fullname is "+person.firstName+" "+person.lastName
+        };
+
+    </script>
+</body>
+</html>

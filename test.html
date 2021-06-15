@@ -10,17 +10,23 @@
 
     <script>
 
-        let x = 123; //global
-        let y;
+        x = 5;
 
+        let x;
 
+        // console.log(bb())
+
+        //function decleartion || statement
         function aa(){
-            let z = 234;//local scope || fun scope
-            return z;
+            console.log("this is aa");
         }
-       
 
-        let a = aa()+1;
+        //function expression
+        let bb = function(){
+            console.log("this is bb");
+        }
+
+        console.log(bb());
 
     </script>
     
