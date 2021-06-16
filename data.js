@@ -23,7 +23,7 @@ let students = [
         name : "zaw zaw",
         age : 19,
         gender : "male",
-        mark : 95
+        mark : 25
     },
     {
         name : "may thu",
