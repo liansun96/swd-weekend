@@ -26,13 +26,28 @@
         <li id="list${i}">
             <button onclick="del(${i})">Delete</button>
             <button onclick="edit(${i})">Edit</button>
-            ${input.value}
+            <span id="listText${i}">${input.value}</span>
         </li>
         `;
         i++;
         input.value = "";
         lists = [];
         document.querySelectorAll("li").forEach(x=>lists.push(x.innerHTML));
+    }
+
+    function del(x){
+        let currentList = document.getElementById("list"+x);
+
+        if(confirm("Are U sure to Delete")){
+            output.removeChild(currentList);
+        }
+    }
+
+    function edit(x){
+        let currentList = document.getElementById("list"+x);
+        let currentListText = document.getElementById("listText"+x);
+        let newText = prompt("Old Text",currentListText.innerHTML);
+        currentListText.innerHTML = newText;
     }
 
     document.getElementById("btn").addEventListener("click",function () {
@@ -44,6 +59,8 @@
             showList();
         }
     })
+
+
 
 
 </script>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        input,button{
+            display: inline-block;
+            height: 50px;
+            padding: 10px 15px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        tr,td,th{
+            border : 1px solid black;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+<h1>အလှူငွေစာရင်း</h1>
+<div class="">
+    <input type="text" placeholder="နာမည်" id="name">
+    <input type="number" placeholder="ဖုန်းနံပတ်" id="phone">
+    <input type="number" placeholder="အလှူငွေ" id="amount">
+    <button id="btn" onclick="addRow()">မှတ်သားမယ်</button>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>No</th>
+        <th>နာမည်</th>
+        <th>ဖုန်းနာပတ်</th>
+        <th>အလှူငွေ</th>
+    </tr>
+    </thead>
+    <tbody id="output">
+
+    </tbody>
+
+</table>
+<h4>Total : <span id="total">0</span></h4>
+<script>
+    let output = document.getElementById("output");
+    let allInput = document.querySelectorAll("input");
+    let i = 1;
+
+
+    function addRow() {
+        let tr= document.createElement("tr");
+
+        let td = document.createElement("td");
+        td.innerHTML = i;
+        tr.appendChild(td);
+
+        allInput.forEach(x=>{
+            let td1 = document.createElement("td");
+            td1.innerHTML = x.value;
+            if(x.getAttribute("id") === "amount"){
+                td1.classList.add("donateAmount");
+            }
+            tr.appendChild(td1);
+            x.value = "";
+        })
+
+        output.appendChild(tr);
+        i++;
+
+        document.getElementById("total").innerHTML = calcTotal();
+    }
+
+    function calcTotal() {
+        let amountArr = [];
+        let total = 0;
+        let donateAmount = document.querySelectorAll(".donateAmount");
+        // donateAmount.forEach(x=>amountArr.push(Number(x.innerHTML)));
+        // return amountArr.reduce((x,y)=>x+y);
+
+        donateAmount.forEach(x => total+=Number(x.innerHTML));
+        return total;
+    }
+
+
+</script>
+
+</body>
+</html>
