@@ -4,31 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>list to do </title>
 </head>
 <body>
-
-    <script>
-
-        x = 5;
-
-        let x;
-
-        // console.log(bb())
-
-        //function decleartion || statement
-        function aa(){
-            console.log("this is aa");
+<h4>lesslon</h4>
+<div class="">
+    <input type="text" class="" id="b1">
+    <button class="" id="" onclick="a()">Add</button>
+</div>
+<div>
+    <ul id="a1">
+    </ul>
+</div>
+<script>
+    let i = 1;
+    //input
+    let bb= document.getElementById("b1");
+    //list
+    let aa= document.getElementById("a1");
+    function condi(a) {
+        if (a.length>=3) {
+            return a;
+        }else{
+            alert("mar tae");
         }
-
-        //function expression
-        let bb = function(){
-            console.log("this is bb");
+    }
+    function show(text) {
+        let x= `
+            <li id="list${i}">
+            <button onclick="del(${i})" id="delid">delete</button>
+            <button onclick="edit(${i})" id="editid">edit</button>
+            <span id="spanid${i}">${text}</span>
+           </li>
+            `;
+        i++;
+        return x;
+    }
+    function del(listId) {
+        let current =document.getElementById(`list${listId}`);
+        aa.removeChild(current);
+        // let a = document.getElementById(`spanid${listid}`).innerHTML;
+        // alert(a);
+    }
+    function edit(listId) {
+        let a=document.getElementById(`spanid${listId}`);
+        let text= prompt(`say something`,a.innerHTML);
+        if (condi(text)) {
+            a.innerHTML=text;
         }
-
-        console.log(bb());
-
-    </script>
-    
+    }
+    function a() {
+        //get
+        let list= condi(bb.value);
+        //set
+        if (list) {
+            aa.innerHTML += show(list);
+            bb.value="";
+        }
+    }
+</script>
 </body>
 </html>

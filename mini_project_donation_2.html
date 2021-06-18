@@ -46,60 +46,68 @@
     <tbody id="output">
 
     </tbody>
-    <tfoot>
-    <tr>
-        <th colspan="3">Total</th>
-        <td id="total">0</td>
-    </tr>
+    <tfoot id="totalOutput">
+
     </tfoot>
 
 </table>
 
 <script>
     let output = document.getElementById("output");
+    let totalOutput = document.getElementById("totalOutput");
     let allInput = document.querySelectorAll("input");
     let i = 1;
+    let list = [];
 
 
-    document.getElementById("form").addEventListener("submit",function (e) {
-        e.preventDefault();
-        addRow();
-    });
+
 
 
     function addRow() {
-        let tr= document.createElement("tr");
 
-        let td = document.createElement("td");
-        td.innerHTML = i;
-        tr.appendChild(td);
+        output.innerHTML = "";
 
-        allInput.forEach(x=>{
-            let td1 = document.createElement("td");
-            td1.innerHTML = x.value;
-            if(x.getAttribute("id") === "amount"){
-                td1.classList.add("donateAmount");
+        list.map((x,index) => {
+            let tr= document.createElement("tr");
+
+            let td = document.createElement("td");
+            td.innerHTML = index+1;
+            tr.appendChild(td);
+
+
+            for(a in x){
+                let td1 = document.createElement("td");
+                td1.innerHTML = x[a];
+                tr.appendChild(td1);
             }
-            tr.appendChild(td1);
-            x.value = "";
+
+            output.appendChild(tr);
         })
 
-        output.appendChild(tr);
-        i++;
+        calcTotal();
 
-        document.getElementById("total").innerHTML = calcTotal();
-        localStorage.setItem("rows",output.innerHTML);
+
     }
 
     function calcTotal() {
-        let amountArr = [];
-        let total = 0;
-        let donateAmount = document.querySelectorAll(".donateAmount");
-        // donateAmount.forEach(x=>amountArr.push(Number(x.innerHTML)));
-        // return amountArr.reduce((x,y)=>x+y);
 
-        donateAmount.forEach(x => total+=Number(x.innerHTML));
-        return total;
+        totalOutput.innerHTML = "";
+
+        let tr = document.createElement("tr");
+
+        let td1 = document.createElement("td");
+        td1.innerHTML = "total";
+        let attr = document.createAttribute("colspan");
+        attr.value = 3;
+        td1.setAttributeNode(attr);
+        td1.style.textAlign = "center";
+        tr.appendChild(td1);
+
+        let td2 = document.createElement("td");
+        td2.innerHTML = list.reduce((x,y) => x+Number(y.amount),0);
+        tr.appendChild(td2);
+
+        totalOutput.appendChild(tr);
     }
 
     if(localStorage.getItem('rows')){
@@ -107,6 +115,18 @@
         document.getElementById("total").innerHTML = calcTotal();
         i = document.querySelectorAll("tbody tr").length + 1;
     }
+
+    document.getElementById("form").addEventListener("submit",function (e) {
+        e.preventDefault();
+        let row = {};
+        allInput.forEach(x=>{
+            row[x.getAttribute('id')] = x.value;
+        });
+        list.push(row);
+        addRow();
+        console.log(list);
+
+    });
 
 
 
