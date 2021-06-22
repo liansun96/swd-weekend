@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="play(1,6)">Play</button>
+
+
+<h1 id="result"></h1>
+<img src="dices/dice-1.svg" id="dice1" alt="">
+
+
+<script>
+    let result = document.getElementById("result");
+    function play(min, max) {
+        let r =Math.floor(Math.random() * (max - min + 1) ) + min;
+        let diceImg = `dices/dice-${r}.svg`;
+        document.getElementById("dice1").src = diceImg;
+    }
+
+</script>
+
+</body>
+</html>
