@@ -10,26 +10,85 @@
         img{
             width: 200px;
         }
+        .container{
+            text-align: center;
+        }
+        table{
+            margin:auto;
+            border-collapse: collapse;
+            margin-top : 10px;
+        }
+        tr,td,th{
+            border : 1px solid black;
+            padding: 10px 15px;
+        }
     </style>
 </head>
 <body>
 
-<button onclick="play(1,6)">Play</button>
+<div class="container">
+    <button id="play" onclick="play(1,6)" >အန်စာ ခေါက်မယ်</button>
+    <div id="message">
+        <p>Player 1 အန်စာ ခေါက်ပါ</p>
 
-
-<h1 id="result"></h1>
-<img src="dices/dice-1.svg" id="dice1" alt="">
+        </table>
+    </div>
+    <h1 id="result"></h1>
+    <img src="dices/start.jpg" id="dice1" alt="">
+    <div id="winner"></div>
+    <button id="replayBtn" style="display: none" onclick="location.reload()">Replay</button>
+</div>
 
 
 <script>
     let result = document.getElementById("result");
+    let totalPlayer = prompt("ဘယ်နှယောက်ဆော့မှာလဲ 😁");
+    let turn = 1;
+    let message = document.getElementById("message");
+    let results = [];
     function play(min, max) {
+
         let r =Math.floor(Math.random() * (max - min + 1) ) + min;
         let diceImg = `dices/dice-${r}.svg`;
         document.getElementById("dice1").src = diceImg;
+        results.push(r);
+
+        if(results.length == totalPlayer){
+
+            document.getElementById("play").setAttribute("disabled",true);
+            message.innerHTML = `
+            <table>
+            <thead>
+            <tr>
+                <th>ကစာသမား</th>
+                <th>ရမှတ်</th>
+            </tr>
+            </thead>
+            <tbody id="aa">
+
+            </tbody>`;
+
+            let maxMark = Math.max(...results);
+
+            results.map((el,index) => {
+                if(el == maxMark){
+                    document.getElementById("winner").innerHTML += `<h2>ရမှတ် ${maxMark} ဖြင့် player ${index+1} မှအနိုင်ရရှိသွားပါတယ်။</h2>`;
+                }
+                document.getElementById("aa").innerHTML += `<tr><td>Player ${index+1}</td><td>${el}</td></tr>`;
+
+            });
+
+            document.getElementById("replayBtn").style.display = "inline";
+        }else {
+            turn++;
+            message.innerHTML = `<p>Player ${turn} အန်စာ ခေါက်ပါ</p>`;
+        }
     }
 
 </script>
 
 </body>
 </html>
+
+224
+116
