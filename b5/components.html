@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .overflowTest{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body class="p-5">
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="#">Home</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">user</a>
+    </li>
+    <li class="breadcrumb-item">
+        Detail
+    </li>
+</ol>
+
+<hr>
+
+
+<button class="btn btn-primary">Click Me</button>
+<button class="btn btn-outline-secondary ">Click Me</button>
+<button class="btn btn-primary btn-lg">Click Me</button>
+<button class="btn btn-primary btn-sm rounded-pill">Click Me</button>
+
+<div class="btn-group">
+    <button class="btn btn-primary">Click Me</button>
+    <button class="btn btn-primary active">Click Me</button>
+    <button class="btn btn-primary">Click Me</button>
+
+</div>
+
+<hr>
+<p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Link with href
+    </a>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Button with data-bs-target
+    </button>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+    </div>
+</div>
+
+<hr>
+
+<div class="dropdown">
+    <button class="btn btn-primary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        testing
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">My Test</a></li>
+    </ul>
+</div>
+
+<hr>
+
+<ul class="list-group w-25">
+    <li class="list-group-item d-flex justify-content-between">
+        apple <span class="badge bg-primary">15</span>
+    </li>
+    <li class="list-group-item">Orange</li>
+    <li class="list-group-item active">Mango</li>
+    <li class="list-group-item">Banana</li>
+</ul>
+
+<div class="list-group">
+    <a href="https://google.com" class="list-group-item list-group-item-action">Google</a>
+    <a href="https://google.com" class="list-group-item">Youtube</a>
+    <a href="https://google.com" class="list-group-item">Email</a>
+</div>
+
+<hr>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+</nav>
+
+<hr>
+
+<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+    Popover on top
+</button>
+<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
+    Popover on right
+</button>
+<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
+    Popover on bottom
+</button>
+<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">
+    Popover on left
+</button>
+
+<h1 data-bs-toggle="popover" class="d-inline" data-bs-content="hein htet zan <br> min ga lar par">HHZ</h1>
+
+<hr>
+
+
+
+<div class="w-50">
+    <div class="progress ">
+        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" id="obj" role="progressbar" style="width: 30%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+</div>
+
+<hr>
+
+<div class="spinner-border text-danger" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+<div class="spinner-grow text-success" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+<hr>
+
+<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+    Tooltip on top
+</button>
+<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">
+    Tooltip on right
+</button>
+<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
+    Tooltip on bottom
+</button>
+<button type="button" class="btn btn-secondary" data-bs-html="true" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left <br> hhz">
+    Tooltip on left
+</button>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<!--<script src="node_modules/@popperjs/core/dist/cjs/popper.js"></script>-->
+<!--<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>-->
+
+<script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+    let obj = document.getElementById("obj");
+
+    let currentWidth = parseInt(obj.style.width);
+
+    let run = setInterval(function () {
+
+        currentWidth += 2;
+
+        obj.style.width = currentWidth+"%";
+
+        if(currentWidth == 100){
+            clearInterval(run);
+        }
+
+        console.log(currentWidth)
+
+    },100);
+
+
+
+
+</script>
+</body>
+</html>
