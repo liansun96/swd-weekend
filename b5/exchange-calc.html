@@ -64,7 +64,22 @@
 
             </div>
         </div>
-        <div class="col-12 col-lg-8"></div>
+        <div class="col-12 col-lg-8">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Amount</th>
+                    <th>From Currency</th>
+                    <th>To Currency</th>
+                    <th>Result</th>
+                </tr>
+                </thead>
+                <tbody id="records">
+
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -77,6 +92,7 @@
     let to = document.getElementById("to");
     let result1 = document.getElementById("result1");
     let result2 = document.getElementById("result2");
+    let records = document.getElementById("records");
 
     let data = {
         "result": "success",
@@ -269,12 +285,20 @@
         //process
         let toUsd = inputValue / data.conversion_rates[fromValue];//input currency to usd
         let output = toUsd * data.conversion_rates[toValue];
+        let result = output.toFixed(2);
 
         console.log(output);
 
         //output
         result1.innerHTML = `${fromValue} to ${toValue}`;
-        result2.innerHTML = output.toFixed(2);
+        result2.innerHTML = result;
+        records.innerHTML += `<tr>
+                                <td>${document.querySelectorAll("#records tr").length+1}</td>
+                                <td>${inputValue}</td>
+                                <td>${fromValue}</td>
+                                <td>${toValue}</td>
+                                <td>${result} ${toValue}</td>
+                            </tr>`;
 
     })
 
