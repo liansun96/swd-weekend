@@ -1,2 +1,72 @@
-https://app.exchangerate-api.com/
-https://v6.exchangerate-api.com/v6/35fa483bb20be556a9ca3099/latest/USD
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+
+        body{
+            height: 400vh;
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+
+        .box-one{
+
+        }
+    </style>
+</head>
+<body class="">
+
+<div class="container">
+
+    <div class="row my-5">
+        <div class="col-12 col-lg-4">
+            <div class="">
+
+                <form action="">
+
+                    <div class="mb-3">
+                        <label class="form-label">Amount</label>
+                        <input type="text" id="input" class="form-control">
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label class="form-label">From</label>
+                            <select class="form-select" name="" id="from">
+                                <option value=""></option>
+                            </select>
+                        </div>
+
+                        <div class="col-6">
+                            <label class="form-label">To</label>
+                            <select class="form-select" name="" id="To">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button id="calculate"  class="btn btn-primary w-100">Calculate</button>
+
+                </form>
+
+            </div>
+        </div>
+        <div class="col-12 col-lg-8"></div>
+    </div>
+</div>
+
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<!--<script src="node_modules/@popperjs/core/dist/cjs/popper.js"></script>-->
+<!--<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>-->
+</body>
+</html>
