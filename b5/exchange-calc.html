@@ -31,11 +31,15 @@
         <div class="col-12 col-lg-4">
             <div class="">
 
+                <div class="d-flex border rounded p-3 mb-3 align-items-end justify-content-between">
+                    <small class="text-black-50" id="result1"></small>
+                    <h2 class="mb-0" id="result2">0</h2>
+                </div>
                 <form action="" id="calcFrom">
 
                     <div class="mb-3">
                         <label class="form-label">Amount</label>
-                        <input type="text" id="input" class="form-control form-control-lg">
+                        <input type="text" id="input" class="form-control form-control-lg text-end">
                     </div>
 
                     <div class="row mb-3">
@@ -71,6 +75,8 @@
     let input = document.getElementById("input");
     let from = document.getElementById("from");
     let to = document.getElementById("to");
+    let result1 = document.getElementById("result1");
+    let result2 = document.getElementById("result2");
 
     let data = {
         "result": "success",
@@ -259,6 +265,16 @@
         let fromValue = from.value;
         let toValue = to.value;
         console.log(inputValue,fromValue,toValue);
+
+        //process
+        let toUsd = inputValue / data.conversion_rates[fromValue];//input currency to usd
+        let output = toUsd * data.conversion_rates[toValue];
+
+        console.log(output);
+
+        //output
+        result1.innerHTML = `${fromValue} to ${toValue}`;
+        result2.innerHTML = output.toFixed(2);
 
     })
 
