@@ -6,7 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+<!--    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">-->
+    <link rel="stylesheet" href="bootswatch/bootstrap.min.css">
     <style>
 
         body{
@@ -35,11 +36,12 @@
                     <small class="text-black-50" id="result1"></small>
                     <h2 class="mb-0" id="result2">0</h2>
                 </div>
+                <button class="btn btn-danger" id="clear">Clear</button>
                 <form action="" id="calcFrom">
 
                     <div class="mb-3">
                         <label class="form-label">Amount</label>
-                        <input type="text" id="input" class="form-control form-control-lg text-end">
+                        <input type="text" id="input" class="form-control form-control-lg text-end" required>
                     </div>
 
                     <div class="row mb-3">
@@ -82,6 +84,7 @@
         </div>
     </div>
 </div>
+
 
 
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
@@ -273,6 +276,12 @@
         to.innerHTML += `<option value="${x}">${x}</option>`;
     });
 
+    from.addEventListener("change",function (){
+       console.log(this.value);
+        document.querySelectorAll(`#to option`).forEach(x=>x.style.display='block');
+        document.querySelector(`#to option[value=${this.value}]`).style.display = "none";
+    });
+
     document.getElementById("calcFrom").addEventListener("submit",function (e){
         e.preventDefault();
 
@@ -301,6 +310,14 @@
                             </tr>`;
 
     })
+
+    document.getElementById("clear").addEventListener("click",function clear(){
+        input.value = "";
+        result1.innerHTML = "";
+        result2.innerHTML = 0;
+        from.value = "USD";
+        to.value = "USD";
+    });
 
 
 </script>

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800;900&display=swap');
+$primary : #1F17A5;
+$secondary : #7E76F9;
+$dark: #42495B;
+$success : #4ABB4A;
+$danger : #FC6681;
+$warning : #FFD037;
+$font-family-sans-serif : 'Montserrat', sans-serif;
+
+//button
+$btn-border-radius : 30px;
+$btn-border-radius-lg : 50px;
+$btn-border-radius-sm : 30px;
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../vendor/feather-icons-web/feather.css";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+
+.navbar-brand img{
+  height: 50px;
+}
+
+.navbar-brand span{
+  vertical-align: bottom;
+}
+
+.scroll-to-services{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  color: $primary;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.section-2-bg{
+  background-image: url(../images/bg-2.svg);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: right;
+}

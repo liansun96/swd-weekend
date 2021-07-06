@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+$primary : #581b98;
+$secondary : #f3558e;
+$success :#a7ff83;
+
+$font-family-sans-serif : 'Rajdhani', 'Padauk', sans-serif;
+
+$border-radius : 0;
+$border-radius-lg : 0;
+$border-radius-sm : 0;
+
+$navbar-dark-color: #fff;
+
+
+$input-bg : black;
+
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
