@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800;900&display=swap');
+$primary : #4468E2;
+$secondary : #7E76F9;
+
+
+//button
+$btn-border-radius : 20px;
+$btn-padding-x : 25px;
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../vendor/feather-icons-web/feather.css";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+
+
+.nav-link{
+  margin: auto 20px;
+}
