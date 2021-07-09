@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800;900&display=swap');
 $primary : #4468E2;
-$secondary : #7E76F9;
+
 
 
 //button
@@ -31,4 +31,22 @@ $btn-padding-x : 25px;
 .home-search{
   background: #ffffffbd;
   backdrop-filter: blur(5px);
+}
+
+.icon{
+  background: #000;
+  color: #fff;
+  display: inline-block;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.full{
+  height: 350px;
+}
+.half{
+  height: 160px;
 }
